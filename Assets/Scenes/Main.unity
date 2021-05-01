@@ -278,6 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 562096578}
   - component: {fileID: 562096579}
+  - component: {fileID: 562096580}
   m_Layer: 0
   m_Name: Wall (1)
   m_TagString: Untagged
@@ -325,6 +326,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &562096580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562096577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80df0108fcd27e14ba3483cab61581ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallPosition:
+    positionX: 0
+    positionY: 0
+    positionZ: 0
+  wallRotation:
+    rotationX: 0
+    rotationY: 0
+    rotationZ: 0
+    rotationW: 0
+  wallScale:
+    scaleX: 0
+    scaleY: 0
+    scaleZ: 0
 --- !u!1 &904142737
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1445695148}
   - component: {fileID: 1445695149}
+  - component: {fileID: 1445695150}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -416,6 +443,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1445695150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445695147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80df0108fcd27e14ba3483cab61581ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallPosition:
+    positionX: 0
+    positionY: 0
+    positionZ: 0
+  wallRotation:
+    rotationX: 0
+    rotationY: 0
+    rotationZ: 0
+    rotationW: 0
+  wallScale:
+    scaleX: 0
+    scaleY: 0
+    scaleZ: 0
 --- !u!1 &1539513286
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1688239615}
   - component: {fileID: 1688239616}
+  - component: {fileID: 1688239617}
   m_Layer: 0
   m_Name: Wall (2)
   m_TagString: Untagged
@@ -596,6 +649,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1688239617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688239614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80df0108fcd27e14ba3483cab61581ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallPosition:
+    positionX: 0
+    positionY: 0
+    positionZ: 0
+  wallRotation:
+    rotationX: 0
+    rotationY: 0
+    rotationZ: 0
+    rotationW: 0
+  wallScale:
+    scaleX: 0
+    scaleY: 0
+    scaleZ: 0
 --- !u!1 &1910774713
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,8 +767,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2061574756}
+  - component: {fileID: 2061574757}
   m_Layer: 0
-  m_Name: '[SCENE MANAGER]'
+  m_Name: '[SCENE DATA MANAGER]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -710,6 +789,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2061574757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061574755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20c10e61ecf85541a97954119f21ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallArray: []
 --- !u!1 &2095488382
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,6 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2095488383}
   - component: {fileID: 2095488384}
+  - component: {fileID: 2095488385}
   m_Layer: 0
   m_Name: Wall (3)
   m_TagString: Untagged
@@ -767,3 +860,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2095488385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095488382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80df0108fcd27e14ba3483cab61581ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallPosition:
+    positionX: 0
+    positionY: 0
+    positionZ: 0
+  wallRotation:
+    rotationX: 0
+    rotationY: 0
+    rotationZ: 0
+    rotationW: 0
+  wallScale:
+    scaleX: 0
+    scaleY: 0
+    scaleZ: 0

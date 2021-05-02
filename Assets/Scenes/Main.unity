@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 24776153}
   m_Layer: 0
-  m_Name: '[STATIC]'
+  m_Name: ==STATIC==
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 263796930}
   m_Layer: 0
-  m_Name: '[DYNAMIC]'
+  m_Name: ==DYNAMIC==
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,7 +181,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.845213, y: -0.13526866, z: -1.8090961}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 904142738}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -278,10 +279,9 @@ GameObject:
   m_Component:
   - component: {fileID: 562096578}
   - component: {fileID: 562096579}
-  - component: {fileID: 562096580}
   m_Layer: 0
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,31 +326,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &562096580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562096577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80df0108fcd27e14ba3483cab61581ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wallPosition:
-    positionX: 0
-    positionY: 0
-    positionZ: 0
-  wallRotation:
-    rotationX: 0
-    rotationY: 0
-    rotationZ: 0
-    rotationW: 0
-  wallScale:
-    scaleX: 0
-    scaleY: 0
-    scaleZ: 0
 --- !u!1 &904142737
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +349,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904142737}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -382,7 +357,7 @@ Transform:
   - {fileID: 562096578}
   - {fileID: 1688239615}
   - {fileID: 2095488383}
-  m_Father: {fileID: 1910774715}
+  m_Father: {fileID: 263796930}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1445695147
@@ -395,10 +370,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1445695148}
   - component: {fileID: 1445695149}
-  - component: {fileID: 1445695150}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -443,31 +417,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1445695150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445695147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80df0108fcd27e14ba3483cab61581ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wallPosition:
-    positionX: 0
-    positionY: 0
-    positionZ: 0
-  wallRotation:
-    rotationX: 0
-    rotationY: 0
-    rotationZ: 0
-    rotationW: 0
-  wallScale:
-    scaleX: 0
-    scaleY: 0
-    scaleZ: 0
 --- !u!1 &1539513286
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,10 +550,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1688239615}
   - component: {fileID: 1688239616}
-  - component: {fileID: 1688239617}
   m_Layer: 0
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -649,31 +597,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1688239617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688239614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80df0108fcd27e14ba3483cab61581ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wallPosition:
-    positionX: 0
-    positionY: 0
-    positionZ: 0
-  wallRotation:
-    rotationX: 0
-    rotationY: 0
-    rotationZ: 0
-    rotationW: 0
-  wallScale:
-    scaleX: 0
-    scaleY: 0
-    scaleZ: 0
 --- !u!1 &1910774713
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,8 +676,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 904142738}
+  m_Children: []
   m_Father: {fileID: 24776153}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -769,7 +691,7 @@ GameObject:
   - component: {fileID: 2061574756}
   - component: {fileID: 2061574757}
   m_Layer: 0
-  m_Name: '[SCENE DATA MANAGER]'
+  m_Name: '[DATA MANAGER]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,10 +720,67 @@ MonoBehaviour:
   m_GameObject: {fileID: 2061574755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f20c10e61ecf85541a97954119f21ba3, type: 3}
+  m_Script: {fileID: 11500000, guid: 7018e4461a500ee439d1363af57a11fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallArray: []
+  _settingData:
+    walls:
+    - wallPosition:
+        positionX: 0
+        positionY: 0
+        positionZ: 0
+      wallRotation:
+        rotationX: 0
+        rotationY: 0
+        rotationZ: 0
+        rotationW: 0
+      wallScale:
+        scaleX: 0
+        scaleY: 0
+        scaleZ: 0
+      isColliding: 0
+    - wallPosition:
+        positionX: 0
+        positionY: 0
+        positionZ: 0
+      wallRotation:
+        rotationX: 0
+        rotationY: 0
+        rotationZ: 0
+        rotationW: 0
+      wallScale:
+        scaleX: 0
+        scaleY: 0
+        scaleZ: 0
+      isColliding: 0
+    - wallPosition:
+        positionX: 0
+        positionY: 0
+        positionZ: 0
+      wallRotation:
+        rotationX: 0
+        rotationY: 0
+        rotationZ: 0
+        rotationW: 0
+      wallScale:
+        scaleX: 0
+        scaleY: 0
+        scaleZ: 0
+      isColliding: 0
+    - wallPosition:
+        positionX: 0
+        positionY: 0
+        positionZ: 0
+      wallRotation:
+        rotationX: 0
+        rotationY: 0
+        rotationZ: 0
+        rotationW: 0
+      wallScale:
+        scaleX: 0
+        scaleY: 0
+        scaleZ: 0
+      isColliding: 0
 --- !u!1 &2095488382
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,10 +791,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2095488383}
   - component: {fileID: 2095488384}
-  - component: {fileID: 2095488385}
   m_Layer: 0
   m_Name: Wall (3)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,28 +838,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2095488385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095488382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80df0108fcd27e14ba3483cab61581ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wallPosition:
-    positionX: 0
-    positionY: 0
-    positionZ: 0
-  wallRotation:
-    rotationX: 0
-    rotationY: 0
-    rotationZ: 0
-    rotationW: 0
-  wallScale:
-    scaleX: 0
-    scaleY: 0
-    scaleZ: 0

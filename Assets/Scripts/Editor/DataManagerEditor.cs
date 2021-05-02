@@ -7,12 +7,15 @@ using UnityEngine;
 public class DataManagerEditor : Editor
 {
     private string _jsonSaveFilePath;
-    
+
     private DataManager _dataManager;
+    private string applicationPath;
+    private string jsonFileName;
 
     private void OnEnable()
     {
-        _jsonSaveFilePath = Application.dataPath + "/Data/GameData.json";
+        applicationPath = Application.dataPath;
+        _jsonSaveFilePath = applicationPath + "/Data/GameData.json";
         _dataManager = (DataManager) target;
     }
 
@@ -20,13 +23,18 @@ public class DataManagerEditor : Editor
     {
         base.OnInspectorGUI();
 
-        string jsonLoadPath = "";
+        
         GUILayout.Label("Load path");
-        jsonLoadPath = GUILayout.TextField(jsonLoadPath);
+        jsonFileName = GUILayout.TextField(jsonFileName);
 
         if (GUILayout.Button("Load"))
         {
-            _dataManager.Load(jsonLoadPath);
+            _dataManager.Load(applicationPath + "/Data/" + jsonFileName + ".json");
+        }
+        
+        else if (GUILayout.Button("Setup"))
+        {
+            _dataManager.Setup();
         }
 
         else if (GUILayout.Button("Save"))
@@ -34,9 +42,6 @@ public class DataManagerEditor : Editor
             _dataManager.Save(_jsonSaveFilePath);
         }
 
-        else if (GUILayout.Button("Get Refs"))
-        {
-            _dataManager.GetRefs();
-        }
+        
     }
 }

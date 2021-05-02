@@ -1,0 +1,81 @@
+{
+  "walls": [
+    {
+      "wallPosition": {
+        "positionX": 0.0,
+        "positionY": 0.0,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 0.0
+      },
+      "wallScale": {
+        "scaleX": 0.0,
+        "scaleY": 0.0,
+        "scaleZ": 0.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": 0.0,
+        "positionY": 0.0,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 0.0
+      },
+      "wallScale": {
+        "scaleX": 0.0,
+        "scaleY": 0.0,
+        "scaleZ": 0.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": 0.0,
+        "positionY": 0.0,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 0.0
+      },
+      "wallScale": {
+        "scaleX": 0.0,
+        "scaleY": 0.0,
+        "scaleZ": 0.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": 0.0,
+        "positionY": 0.0,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 0.0
+      },
+      "wallScale": {
+        "scaleX": 0.0,
+        "scaleY": 0.0,
+        "scaleZ": 0.0
+      },
+      "isColliding": true
+    }
+  ],
+  "hour": 21
+}

@@ -6,25 +6,37 @@ using UnityEngine;
 [CustomEditor(typeof(DataManager))]
 public class DataManagerEditor : Editor
 {
-    private DataManager dataManager;
+    private string _jsonSaveFilePath;
+    
+    private DataManager _dataManager;
 
     private void OnEnable()
     {
-        dataManager = (DataManager) target;
+        _jsonSaveFilePath = Application.dataPath + "/Data/GameData.json";
+        _dataManager = (DataManager) target;
     }
 
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
 
-        if (GUILayout.Button("Save"))
+        string jsonLoadPath = "";
+        GUILayout.Label("Load path");
+        jsonLoadPath = GUILayout.TextField(jsonLoadPath);
+
+        if (GUILayout.Button("Load"))
         {
-            dataManager.Save();
+            _dataManager.Load(jsonLoadPath);
         }
 
-        else if (GUILayout.Button("Load"))
+        else if (GUILayout.Button("Save"))
         {
-            dataManager.Load();
+            _dataManager.Save(_jsonSaveFilePath);
+        }
+
+        else if (GUILayout.Button("Get Refs"))
+        {
+            _dataManager.GetRefs();
         }
     }
 }

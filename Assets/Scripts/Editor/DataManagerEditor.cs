@@ -1,18 +1,16 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Settings;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(SettingManager))]
-public class SettingManagerEditor : Editor
+[CustomEditor(typeof(DataManager))]
+public class DataManagerEditor : Editor
 {
-    private SettingManager settingManager;
+    private DataManager dataManager;
 
     private void OnEnable()
     {
-        settingManager = (SettingManager) target;
+        dataManager = (DataManager) target;
     }
 
     public override void OnInspectorGUI()
@@ -21,12 +19,12 @@ public class SettingManagerEditor : Editor
 
         if (GUILayout.Button("Save"))
         {
-            settingManager.Save();
+            dataManager.Save();
         }
 
         else if (GUILayout.Button("Load"))
         {
-            settingManager.Load();
+            dataManager.Load();
         }
     }
 }

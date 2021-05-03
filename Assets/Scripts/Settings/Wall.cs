@@ -16,24 +16,18 @@ namespace Settings
         public Wall()
         {
             wallPosition = new SerializablePosition(0, 0, 0);
-            wallRotation = new SerializableRotation(0, 0, 0, 0);
+            wallRotation = new SerializableRotation(0, 0, 0, 1);
             wallScale = new SerializableScale(0, 0, 0);
 
             isColliding = true;
         }
 
-        public void Setup(GameObject gameObject)
-        {
-            Transform transformGO = gameObject.transform;
-            Vector3 position = transformGO.position;
-            Quaternion rotation = transformGO.rotation;
-            Vector3 scale = transformGO.localScale;
+        public SerializablePosition WallPosition => wallPosition;
 
-            wallPosition = new SerializablePosition(position.x, position.y, position.z);
-            wallRotation = new SerializableRotation(rotation.x, rotation.y, rotation.z, rotation.w);
-            wallScale = new SerializableScale(scale.x, scale.y, scale.z);
+        public SerializableRotation WallRotation => wallRotation;
 
-            isColliding = true;
-        }
+        public SerializableScale WallScale => wallScale;
+
+        public bool IsColliding => isColliding;
     }
 }

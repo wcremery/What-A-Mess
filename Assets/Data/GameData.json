@@ -84,7 +84,7 @@
       "positionZ": 0.0
     },
     "image": {
-      "spriteName": "Circle",
+      "spriteName": "zombie",
       "orderInLayer": 1
     },
     "shape": "circle",

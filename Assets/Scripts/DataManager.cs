@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json;
 using Settings;
 using UnityEngine;
 
@@ -11,10 +10,7 @@ public class DataManager : MonoBehaviour
     [SerializeField] private SettingData _settingData;
 
     private SettingData _setting;
-
     private string dynamicNameGO = "==DYNAMIC==";
-    private Wall[] _walls;
-    private Player _player;
 
     public void Load(string jsonFilePath)
     {
@@ -29,13 +25,12 @@ public class DataManager : MonoBehaviour
         string jsonContent = File.ReadAllText(jsonFilePath);
 
         ParseJson(jsonContent);
-
-        Debug.Log(_setting.Walls[0].IsColliding);
     }
 
     private void ParseJson(string jsonContent)
     {
         _setting = JsonUtility.FromJson<SettingData>(jsonContent);
+        _settingData = _setting;
     }
 
     public void Save(string jsonFilePath)
@@ -49,14 +44,13 @@ public class DataManager : MonoBehaviour
 
     public void Setup()
     {
-        GameObject dynamic = new GameObject(dynamicNameGO);
         SetupWalls();
         SetupPlayer();
     }
 
     private void SetupPlayer()
     {
-        _player = new Player();
+        Player _player = _setting.Player;
         GameObject playerParent = GameObject.Find(dynamicNameGO);
 
         GameObject go = new GameObject("Player");
@@ -92,6 +86,7 @@ public class DataManager : MonoBehaviour
         {
             GameObject go = new GameObject("wall");
             go.transform.parent = wallsParent.transform;
+            go.tag = "wall";
             go.transform.position = walls[i].WallPosition.GetVector3();
             go.transform.rotation = walls[i].WallRotation.GetQuaternion();
             go.transform.localScale = walls[i].WallScale.GetVector3();
@@ -104,11 +99,9 @@ public class DataManager : MonoBehaviour
 
     public void Reset()
     {
-        Transform[] allChildren = GameObject.Find(dynamicNameGO).GetComponentsInChildren<Transform>();
-        
-        for (int i = 0; i < allChildren.Length; i++)
+        while (GameObject.Find(dynamicNameGO).transform.childCount > 0) 
         {
-            DestroyImmediate(allChildren[i].gameObject);
+            DestroyImmediate(GameObject.Find(dynamicNameGO).transform.GetChild(0).gameObject);
         }
     }
 }

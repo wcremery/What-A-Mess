@@ -23,27 +23,31 @@ public class PlayerController : MonoBehaviour
         if (horizontalInput < -.5f && !CheckForCollision(Vector3.left))
         {
             transform.position += Vector3.left * (movementSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0,0,180);
         }
 
         else if (horizontalInput > .5f && !CheckForCollision(Vector3.right))
         {
             transform.position += Vector3.right * (movementSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0,0,0);
         }
 
         if (verticalInput < -.5f && !CheckForCollision(Vector3.down))
         {
             transform.position += Vector3.down * (movementSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0,0,270);
         }
 
         else if (verticalInput > .5f && !CheckForCollision(Vector3.up))
         {
             transform.position += Vector3.up * (movementSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0,0,90);
         }
     }
 
     private bool CheckForCollision(Vector3 direction)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(direction.x, direction.y), .5f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(direction.x, direction.y), 1.5f);
 
         if (hit.collider != null)
         {

@@ -56,6 +56,7 @@ public class DataManager : MonoBehaviour
         GameObject go = new GameObject("Player");
         go.transform.parent = playerParent.transform;
         go.transform.position = _player.StartPosition.GetVector3();
+        go.transform.localScale *= 1.5f;
         go.AddComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(_player.Image.SpriteName);
         go.GetComponent<SpriteRenderer>().sortingOrder = _player.Image.OrderInLayer;
         if (_player.Shape.Equals("circle"))
@@ -64,16 +65,6 @@ public class DataManager : MonoBehaviour
         }
 
         go.AddComponent<PlayerController>();
-        SetupPlayerCamera(go);
-    }
-
-    private void SetupPlayerCamera(GameObject go)
-    {
-        GameObject camera = new GameObject("Main Camera");
-        camera.transform.parent = go.transform;
-        camera.transform.position = new Vector3(0, 0, -10);
-        camera.AddComponent<Camera>();
-        camera.GetComponent<Camera>().backgroundColor = Color.black;
     }
 
     private void SetupWalls()

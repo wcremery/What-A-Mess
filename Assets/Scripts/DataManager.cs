@@ -45,20 +45,26 @@ public class DataManager : MonoBehaviour
     {
         SetupWalls();
         SetupPlayer();
+        SetupInteractions();
+    }
+
+    private void SetupInteractions()
+    {
+        Interaction[] interactions = _setting.Interactions;
     }
 
     private void SetupPlayer()
     {
-        Player _player = _setting.Player;
+        Player player = _setting.Player;
         GameObject playerParent = GameObject.Find(dynamicNameGO);
 
         GameObject go = new GameObject("Player");
         go.transform.parent = playerParent.transform;
-        go.transform.position = _player.StartPosition.GetVector3();
+        go.transform.position = player.StartPosition.GetVector3();
         go.transform.localScale *= 1.5f;
-        go.AddComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(_player.Image.SpriteName);
-        go.GetComponent<SpriteRenderer>().sortingOrder = _player.Image.OrderInLayer;
-        if (_player.Shape.Equals("circle"))
+        go.AddComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(player.Image.SpriteName);
+        go.GetComponent<SpriteRenderer>().sortingOrder = player.Image.OrderInLayer;
+        if (player.Shape.Equals("circle"))
         {
             go.AddComponent<CircleCollider2D>();
         }

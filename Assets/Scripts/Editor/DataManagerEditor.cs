@@ -15,7 +15,7 @@ public class DataManagerEditor : Editor
     private void OnEnable()
     {
         applicationPath = Application.dataPath;
-        _jsonSaveFilePath = applicationPath + "/Data/GameData.json";
+        _jsonSaveFilePath = applicationPath + "/Data/GameData2.json";
         _dataManager = (DataManager) target;
     }
 
@@ -25,6 +25,7 @@ public class DataManagerEditor : Editor
 
         
         GUILayout.Label("Load path");
+        jsonFileName = "GameData";
         jsonFileName = GUILayout.TextField(jsonFileName);
 
         if (GUILayout.Button("Load"))
@@ -41,7 +42,10 @@ public class DataManagerEditor : Editor
         {
             _dataManager.Save(_jsonSaveFilePath);
         }
-
         
+        else if (GUILayout.Button("Reset"))
+        {
+            _dataManager.Reset();
+        }
     }
 }

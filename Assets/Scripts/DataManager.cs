@@ -36,8 +36,7 @@ public class DataManager : MonoBehaviour
     public void Save(string jsonFilePath)
     {
         Debug.Log("Saving json...");
-
-        _settingData = new SettingData();
+        
         string jsonContent = JsonUtility.ToJson(_settingData);
         File.WriteAllText(jsonFilePath, jsonContent);
     }

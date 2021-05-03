@@ -15,7 +15,7 @@ public class DataManagerEditor : Editor
     private void OnEnable()
     {
         applicationPath = Application.dataPath;
-        _jsonSaveFilePath = applicationPath + "/Data/GameData2.json";
+        _jsonSaveFilePath = applicationPath + "/Data/GameData3.json";
         _dataManager = (DataManager) target;
     }
 

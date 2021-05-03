@@ -75,6 +75,253 @@
         "scaleZ": 1.0
       },
       "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": 1.09,
+        "positionY": -13.11,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 90.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 25.68,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": 19.54,
+        "positionY": 9.04,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 90.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 10.39,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": -23.23,
+        "positionY": 9.04,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 90.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 3,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": -23.23,
+        "positionY": 0.91,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 90.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 3,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": -14.80,
+        "positionY": 9.04,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 90.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 5.3,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": -14.81,
+        "positionY": 0.96,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 90.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 5.32,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": -12.0,
+        "positionY": -6.0,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 13.7,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": 14.0,
+        "positionY": -6.0,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 13.3,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": 14,
+        "positionY": 15.18,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 11.49,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": -11.98,
+        "positionY": 23.18,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 2.97,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": -11.98,
+        "positionY": 11.91,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 4.72,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": -6.96,
+        "positionY": -15.78,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 4.43,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
+    },
+    {
+      "wallPosition": {
+        "positionX": -6.96,
+        "positionY": -23.35,
+        "positionZ": 0.0
+      },
+      "wallRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 1.0
+      },
+      "wallScale": {
+        "scaleX": 0.1,
+        "scaleY": 2.52,
+        "scaleZ": 1.0
+      },
+      "isColliding": true
     }
   ],
   "player": {

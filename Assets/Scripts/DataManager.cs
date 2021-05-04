@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using Settings;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DataManager : MonoBehaviour
 {
-    [SerializeField] private SettingData _settingData;
-
-    private SettingData _setting;
+    [SerializeField] private SettingData _setting;
     private string dynamicNameGO = "==DYNAMIC==";
+
+    public SettingData Setting => _setting;
 
     public void Load(string jsonFilePath)
     {
@@ -30,14 +31,13 @@ public class DataManager : MonoBehaviour
     private void ParseJson(string jsonContent)
     {
         _setting = JsonUtility.FromJson<SettingData>(jsonContent);
-        _settingData = _setting;
     }
 
     public void Save(string jsonFilePath)
     {
         Debug.Log("Saving json...");
         
-        string jsonContent = JsonUtility.ToJson(_settingData);
+        string jsonContent = JsonUtility.ToJson(_setting);
         File.WriteAllText(jsonFilePath, jsonContent);
     }
 
@@ -51,6 +51,7 @@ public class DataManager : MonoBehaviour
     private void SetupInteractions()
     {
         Interaction[] interactions = _setting.Interactions;
+        GameObject message = GameObject.Find("Message");
     }
 
     private void SetupPlayer()

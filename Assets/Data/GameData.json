@@ -336,5 +336,12 @@
     },
     "shape": "circle",
     "isColliding": true
-  }
+  },
+  "interactions": [
+    {
+      "firstActor": "Player",
+      "secondActor": "Wall",
+      "message": "aie"
+    }
+  ]
 }

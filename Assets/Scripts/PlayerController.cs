@@ -4,39 +4,49 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float horizontalInput;
-    private float verticalInput;
+    private float _horizontalInput;
+    private float _verticalInput;
+    private float _movementSpeed = 5f;
+    private bool _isInteracting = false;
 
-    private float movementSpeed = 5f;
+    private string _playerCollideWith = "";
+
+    public string PlayerCollideWith => _playerCollideWith;
+
+    public bool IsInteracting
+    {
+        get => _isInteracting;
+        set => _isInteracting = value;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        _horizontalInput = Input.GetAxis("Horizontal");
+        _verticalInput = Input.GetAxis("Vertical");
 
-        if (horizontalInput < -.5f && !CheckForCollision(Vector3.left))
+        if (_horizontalInput < -.5f && !CheckForCollision(Vector3.left))
         {
-            transform.position += Vector3.left * (movementSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(0,0,180);
+            transform.position += Vector3.left * (_movementSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, 0, 180);
         }
 
-        else if (horizontalInput > .5f && !CheckForCollision(Vector3.right))
+        else if (_horizontalInput > .5f && !CheckForCollision(Vector3.right))
         {
-            transform.position += Vector3.right * (movementSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(0,0,0);
+            transform.position += Vector3.right * (_movementSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        if (verticalInput < -.5f && !CheckForCollision(Vector3.down))
+        if (_verticalInput < -.5f && !CheckForCollision(Vector3.down))
         {
-            transform.position += Vector3.down * (movementSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(0,0,270);
+            transform.position += Vector3.down * (_movementSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, 0, 270);
         }
 
-        else if (verticalInput > .5f && !CheckForCollision(Vector3.up))
+        else if (_verticalInput > .5f && !CheckForCollision(Vector3.up))
         {
-            transform.position += Vector3.up * (movementSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(0,0,90);
+            transform.position += Vector3.up * (_movementSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, 0, 90);
         }
     }
 
@@ -46,7 +56,9 @@ public class PlayerController : MonoBehaviour
 
         if (hit.collider != null)
         {
-            Debug.Log("Hit " + hit.collider.gameObject.name);
+            _isInteracting = true;
+            _playerCollideWith = hit.collider.gameObject.tag;
+            Debug.Log("Hit " + _playerCollideWith);
             return true;
         }
 

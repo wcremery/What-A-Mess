@@ -5,16 +5,11 @@ using UnityEngine;
 namespace Settings
 {
     [System.Serializable]
-    public class Interaction
+    public struct Interaction
     {
         [SerializeField] private string firstActor;
         [SerializeField] private string secondActor;
         [SerializeField] private string message;
-
-        public Interaction()
-        {
-            message = "";
-        }
 
         public string FirstActor => firstActor;
 

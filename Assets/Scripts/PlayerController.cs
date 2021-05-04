@@ -7,17 +7,9 @@ public class PlayerController : MonoBehaviour
     private float _horizontalInput;
     private float _verticalInput;
     private float _movementSpeed = 5f;
-    private bool _isInteracting = false;
-
     private string _playerCollideWith = "";
 
     public string PlayerCollideWith => _playerCollideWith;
-
-    public bool IsInteracting
-    {
-        get => _isInteracting;
-        set => _isInteracting = value;
-    }
 
     // Update is called once per frame
     void Update()
@@ -52,16 +44,16 @@ public class PlayerController : MonoBehaviour
 
     private bool CheckForCollision(Vector3 direction)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(direction.x, direction.y), 1.5f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(direction.x, direction.y), 2f);
 
         if (hit.collider != null)
         {
-            _isInteracting = true;
             _playerCollideWith = hit.collider.gameObject.tag;
             Debug.Log("Hit " + _playerCollideWith);
             return true;
         }
 
+        _playerCollideWith = "none";
         return false;
     }
 }

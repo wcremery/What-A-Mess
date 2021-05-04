@@ -60,8 +60,15 @@ public class GameManager : MonoBehaviour
 
             if (_playerController.PlayerCollideWith.Equals("Wall"))
             {
-                _textMeshProUGUI.text = currentInteraction.Message;
+                StartCoroutine(DisplayMessage(currentInteraction.Message));
             }
         }
+    }
+
+    private IEnumerator DisplayMessage(string message)
+    {
+        _textMeshProUGUI.text = message;
+        yield return new WaitForSeconds(1.5f);
+        _textMeshProUGUI.text = "";
     }
 }

@@ -81,9 +81,9 @@ public class DataManager : MonoBehaviour
 
         for (int i = 0; i < walls.Length; i++)
         {
-            GameObject go = new GameObject("wall");
+            GameObject go = new GameObject("Wall");
             go.transform.parent = wallsParent.transform;
-            go.tag = "wall";
+            go.tag = "Wall";
             go.transform.position = walls[i].WallPosition.GetVector3();
             go.transform.rotation = walls[i].WallRotation.GetQuaternion();
             go.transform.localScale = walls[i].WallScale.GetVector3();

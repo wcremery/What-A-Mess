@@ -46,6 +46,12 @@ public class DataManager : MonoBehaviour
         SetupWalls();
         SetupPlayer();
         SetupInteractions();
+        SetupItems();
+    }
+
+    private void SetupItems()
+    {
+        Item[] items = _setting.Items;
     }
 
     private void SetupInteractions()

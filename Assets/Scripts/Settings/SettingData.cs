@@ -11,6 +11,7 @@ namespace Settings
         [SerializeField] private Wall[] walls;
         [SerializeField] private Player player;
         [SerializeField] private Interaction[] interactions;
+        [SerializeField] private Item[] items;
         
         public SettingData()
         {
@@ -24,6 +25,8 @@ namespace Settings
         public Player Player => player;
 
         public Interaction[] Interactions => interactions;
+
+        public Item[] Items => items;
     }
     
     

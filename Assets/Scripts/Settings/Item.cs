@@ -10,7 +10,7 @@ namespace Settings
         [SerializeField] private SerializableScale itemScale;
         [SerializeField] private bool isColliding;
         [SerializeField] private bool isDisplayed;
-        [SerializeField] private string spriteName;
+        [SerializeField] private string[] spriteName; // path for all sprites and states associated
         [SerializeField] private string tag;
 
         public Item()
@@ -20,7 +20,7 @@ namespace Settings
             itemScale = new SerializableScale(0, 0, 0);
             isColliding = true;
             isDisplayed = true;
-            spriteName = "";
+            spriteName = new string[1];
             tag = "Untagged";
         }
     }

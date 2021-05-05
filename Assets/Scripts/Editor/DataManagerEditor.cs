@@ -46,7 +46,7 @@ public class DataManagerEditor : Editor
             _dataManager.Save(_applicationPath + _dataFolder + _jsonSaveFilePath + _jsonExtension);
         }
 
-        GUILayout.Label("Apply", EditorStyles.boldLabel);
+        GUILayout.Label("Modify scene", EditorStyles.boldLabel);
 
         if (GUILayout.Button("Setup"))
         {

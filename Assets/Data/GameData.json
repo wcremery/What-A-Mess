@@ -336,12 +336,15 @@
     },
     "shape": "circle",
     "isColliding": true
-  },
-  "interactions": [
-    {
-      "firstActor": "Player",
-      "secondActor": "Wall",
-      "message": "aie"
-    }
-  ]
+  },"interactions": [
+  {
+    "firstActor": "Player",
+    "secondActor": "Wall",
+    "message": [
+      "Do I look like a ghost ?",
+      "I cannot pass through the wall..."
+    ]
+  }
+],
+  "items": []
 }

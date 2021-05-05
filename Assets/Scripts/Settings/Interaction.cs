@@ -9,12 +9,12 @@ namespace Settings
     {
         [SerializeField] private string firstActor;
         [SerializeField] private string secondActor;
-        [SerializeField] private string message;
+        [SerializeField] private string[] message;
 
         public string FirstActor => firstActor;
 
         public string SecondActor => secondActor;
 
-        public string Message => message;
+        public string[] Message => message;
     }
 }

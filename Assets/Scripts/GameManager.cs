@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Settings;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -60,7 +61,8 @@ public class GameManager : MonoBehaviour
 
             if (_playerController.PlayerCollideWith.Equals("Wall"))
             {
-                StartCoroutine(DisplayMessage(currentInteraction.Message));
+                int messageIndex = Random.Range(0, currentInteraction.Message.Length);
+                StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
             }
         }
     }

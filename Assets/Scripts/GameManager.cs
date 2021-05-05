@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private List<Interaction> _playerInteractions;
     private PlayerController _playerController;
     private TextMeshProUGUI _textMeshProUGUI;
+    private bool _lookForCollision;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
     {
         _settingData = _dataManager.Setting;
         _interactions = _settingData.Interactions;
+        _lookForCollision = true;
     }
 
     private void GetRefs()
@@ -55,14 +57,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        for (int i = 0; i < _playerInteractions.Count; i++)
+        if (_lookForCollision)
         {
-            Interaction currentInteraction = _interactions[i];
-
-            if (_playerController.PlayerCollideWith.Equals("Wall"))
+            for (int i = 0; i < _playerInteractions.Count; i++)
             {
-                int messageIndex = Random.Range(0, currentInteraction.Message.Length);
-                StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                Interaction currentInteraction = _interactions[i];
+
+                if (_playerController.PlayerCollideWith.Equals("Wall"))
+                {
+                    int messageIndex = Random.Range(0, currentInteraction.Message.Length);
+                    StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                }
             }
         }
     }
@@ -70,7 +75,9 @@ public class GameManager : MonoBehaviour
     private IEnumerator DisplayMessage(string message)
     {
         _textMeshProUGUI.text = message;
+        _lookForCollision = false;
         yield return new WaitForSeconds(1.5f);
         _textMeshProUGUI.text = "";
+        _lookForCollision = !_lookForCollision;
     }
 }

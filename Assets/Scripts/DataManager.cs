@@ -8,8 +8,10 @@ using UnityEngine.Serialization;
 
 public class DataManager : MonoBehaviour
 {
+    [Header("Scene Customization")]
     [SerializeField] private SettingData _setting;
-    private string dynamicNameGO = "==DYNAMIC==";
+    
+    private readonly string dynamicNameGO = "==DYNAMIC==";
 
     public SettingData Setting => _setting;
 

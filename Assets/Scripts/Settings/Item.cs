@@ -17,11 +17,25 @@ namespace Settings
         {
             itemPosition = new SerializablePosition(0, 0, 0);
             itemRotation = new SerializableRotation(0, 0, 0, 1);
-            itemScale = new SerializableScale(0, 0, 0);
+            itemScale = new SerializableScale(1, 1, 1);
             isColliding = true;
             isDisplayed = true;
             spriteName = new string[1];
             tag = "Untagged";
         }
+
+        public SerializablePosition ItemPosition => itemPosition;
+
+        public SerializableRotation ItemRotation => itemRotation;
+
+        public SerializableScale ItemScale => itemScale;
+
+        public bool IsColliding => isColliding;
+
+        public bool IsDisplayed => isDisplayed;
+
+        public string[] SpriteName => spriteName;
+
+        public string Tag => tag;
     }
 }

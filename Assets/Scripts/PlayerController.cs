@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        if (_verticalInput < -.5f && !CheckForCollision(Vector3.down))
+        else if (_verticalInput < -.5f && !CheckForCollision(Vector3.down))
         {
             transform.position += Vector3.down * (_movementSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(0, 0, 270);

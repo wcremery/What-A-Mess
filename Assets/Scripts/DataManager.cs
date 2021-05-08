@@ -76,6 +76,7 @@ public class DataManager : MonoBehaviour
         if (player.Shape.Equals("circle"))
         {
             go.AddComponent<CircleCollider2D>();
+            go.GetComponent<CircleCollider2D>().radius = player.Radius;
         }
 
         go.AddComponent<PlayerController>();
@@ -95,6 +96,8 @@ public class DataManager : MonoBehaviour
             go.transform.position = walls[i].WallPosition.GetVector3();
             go.transform.rotation = walls[i].WallRotation.GetQuaternion();
             go.transform.localScale = walls[i].WallScale.GetVector3();
+            go.AddComponent<SpriteRenderer>();
+            go.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Wall");
             if (walls[i].IsColliding)
             {
                 go.AddComponent<BoxCollider2D>();

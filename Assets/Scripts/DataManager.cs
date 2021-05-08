@@ -46,14 +46,38 @@ public class DataManager : MonoBehaviour
     public void Setup()
     {
         SetupWalls();
+        SetupItems();
         SetupPlayer();
         SetupInteractions();
-        SetupItems();
+        
     }
 
     private void SetupItems()
     {
         Item[] items = _setting.Items;
+        GameObject itemsParent = new GameObject("Items");
+        itemsParent.transform.parent = GameObject.Find(dynamicNameGO).transform;
+
+        for (int i = 0; i < items.Length; i++)
+        {
+            Item currentItem = items[i];
+            GameObject go = new GameObject(currentItem.Tag);
+            go.transform.parent = itemsParent.transform;
+            go.tag = currentItem.Tag;
+            go.transform.position = currentItem.ItemPosition.GetVector3();
+            go.transform.rotation = currentItem.ItemRotation.GetQuaternion();
+            go.transform.localScale = currentItem.ItemScale.GetVector3();
+            go.AddComponent<SpriteRenderer>();
+            go.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentItem.SpriteName[0]);
+            go.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            go.GetComponent<SpriteRenderer>().enabled = currentItem.IsDisplayed;
+
+            if (currentItem.IsColliding)
+            {
+                go.AddComponent<CircleCollider2D>();
+            }
+        }
+        
     }
 
     private void SetupInteractions()

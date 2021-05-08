@@ -63,20 +63,35 @@ public class GameManager : MonoBehaviour
             {
                 Interaction currentInteraction = _interactions[i];
 
-                if (currentInteraction.SecondActor.Equals("Wall"))
+                if (_playerController.PlayerCollideWith != null)
                 {
-                    if (_playerController.PlayerCollideWith.Equals("Wall"))
+                    string colliderTag = _playerController.PlayerCollideWith.tag;
+
+                    if (currentInteraction.SecondActor.Equals("Wall"))
                     {
-                        int messageIndex = Random.Range(0, currentInteraction.Message.Length);
-                        StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                        if (colliderTag.Equals("Wall"))
+                        {
+                            int messageIndex = Random.Range(0, currentInteraction.Message.Length);
+                            StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                        }
                     }
-                }
-                else if (currentInteraction.SecondActor.Equals("Crow"))
-                {
-                    if (_playerController.PlayerCollideWith.Equals("Crow"))
+                    else if (currentInteraction.SecondActor.Equals("Crow"))
                     {
-                        int messageIndex = Random.Range(0, currentInteraction.Message.Length);
-                        StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                        if (colliderTag.Equals("Crow"))
+                        {
+                            int messageIndex = Random.Range(0, currentInteraction.Message.Length);
+                            StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                        }
+                    }
+                    else if (currentInteraction.SecondActor.Equals("Pentagram"))
+                    {
+                        if (colliderTag.Equals("Pentagram"))
+                        {
+                            int messageIndex = Random.Range(0, currentInteraction.Message.Length);
+                            StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                            _playerController.PlayerCollideWith.GetComponent<SpriteRenderer>().sprite =
+                                Resources.Load<Sprite>(currentInteraction.Sprites[0]);
+                        }
                     }
                 }
             }

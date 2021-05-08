@@ -63,10 +63,21 @@ public class GameManager : MonoBehaviour
             {
                 Interaction currentInteraction = _interactions[i];
 
-                if (_playerController.PlayerCollideWith.Equals("Wall"))
+                if (currentInteraction.SecondActor.Equals("Wall"))
                 {
-                    int messageIndex = Random.Range(0, currentInteraction.Message.Length);
-                    StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                    if (_playerController.PlayerCollideWith.Equals("Wall"))
+                    {
+                        int messageIndex = Random.Range(0, currentInteraction.Message.Length);
+                        StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                    }
+                }
+                else if (currentInteraction.SecondActor.Equals("Crow"))
+                {
+                    if (_playerController.PlayerCollideWith.Equals("Crow"))
+                    {
+                        int messageIndex = Random.Range(0, currentInteraction.Message.Length);
+                        StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                    }
                 }
             }
         }

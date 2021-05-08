@@ -48,8 +48,7 @@ public class DataManager : MonoBehaviour
         SetupWalls();
         SetupItems();
         SetupPlayer();
-        SetupInteractions();
-        
+
     }
 
     private void SetupItems()
@@ -68,22 +67,13 @@ public class DataManager : MonoBehaviour
             go.transform.rotation = currentItem.ItemRotation.GetQuaternion();
             go.transform.localScale = currentItem.ItemScale.GetVector3();
             go.AddComponent<SpriteRenderer>();
-            go.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentItem.SpriteName[0]);
+            go.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentItem.SpriteName);
             go.GetComponent<SpriteRenderer>().sortingOrder = 1;
             go.GetComponent<SpriteRenderer>().enabled = currentItem.IsDisplayed;
-
-            if (currentItem.IsColliding)
-            {
-                go.AddComponent<CircleCollider2D>();
-            }
+            go.AddComponent<CircleCollider2D>();
+            go.GetComponent<CircleCollider2D>().isTrigger = !currentItem.IsColliding;
         }
         
-    }
-
-    private void SetupInteractions()
-    {
-        Interaction[] interactions = _setting.Interactions;
-        GameObject message = GameObject.Find("Message");
     }
 
     private void SetupPlayer()

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Crow
+  - Pentagram
   layers:
   - Default
   - TransparentFX

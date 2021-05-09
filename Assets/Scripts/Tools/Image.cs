@@ -10,7 +10,7 @@ public class Image
 
     public Image()
     {
-        spriteName = "Circle";
+        spriteName = "zombie";
         orderInLayer = 1;
     }
 

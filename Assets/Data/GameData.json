@@ -1,4 +1,168 @@
 {
+  "player": {
+    "startPosition": {
+      "positionX": 20.0,
+      "positionY": 20.0,
+      "positionZ": 0.0
+    },
+    "image": {
+      "spriteName": "zombie",
+      "orderInLayer": 2
+    },
+    "shape": "circle",
+    "radius": 0.699999988079071
+  },
+  "interactions": [
+    {
+      "firstActor": "Player",
+      "secondActor": "Wall",
+      "message": [
+        "Do I look like a ghost ?",
+        "I cannot pass through the wall...",
+        "An invisible wall is still a wall",
+        "It would be easier if I was a ghost",
+        "Sometimes I wish I was a ghost"
+      ],
+      "sprites": [
+        ""
+      ]
+    },
+    {
+      "firstActor": "Player",
+      "secondActor": "Crow",
+      "message": [
+        "Crow: you lost your way",
+        "Crow: you should turn around",
+        "Crow: you ? Again...",
+        "Crow: you will be stuck here forever"
+      ],
+      "sprites": [
+        ""
+      ]
+    },
+    {
+      "firstActor": "Player",
+      "secondActor": "Pentagram",
+      "message": [
+        "Congratulation, you escaped successfully"
+      ],
+      "sprites": [
+        "Pentagram_Activated"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "itemPosition": {
+        "positionX": 23.100000381469728,
+        "positionY": 12.0,
+        "positionZ": 0.0
+      },
+      "itemRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 0.0
+      },
+      "itemScale": {
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "isColliding": true,
+      "isDisplayed": true,
+      "spriteName": "Crow",
+      "tag": "Crow"
+    },
+    {
+      "itemPosition": {
+        "positionX": -1.5,
+        "positionY": -16.0,
+        "positionZ": 0.0
+      },
+      "itemRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 0.0
+      },
+      "itemScale": {
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "isColliding": true,
+      "isDisplayed": true,
+      "spriteName": "Crow",
+      "tag": "Crow"
+    },
+    {
+      "itemPosition": {
+        "positionX": -13.699999809265137,
+        "positionY": -0.6000000238418579,
+        "positionZ": 0.0
+      },
+      "itemRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 0.0
+      },
+      "itemScale": {
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "isColliding": true,
+      "isDisplayed": true,
+      "spriteName": "Crow",
+      "tag": "Crow"
+    },
+    {
+      "itemPosition": {
+        "positionX": 3.200000047683716,
+        "positionY": 16.700000762939454,
+        "positionZ": 0.0
+      },
+      "itemRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 0.0
+      },
+      "itemScale": {
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "isColliding": true,
+      "isDisplayed": true,
+      "spriteName": "Crow",
+      "tag": "Crow"
+    },
+    {
+      "itemPosition": {
+        "positionX": 11.020000457763672,
+        "positionY": 21.049999237060548,
+        "positionZ": 0.0
+      },
+      "itemRotation": {
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0,
+        "rotationW": 0.0
+      },
+      "itemScale": {
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "isColliding": false,
+      "isDisplayed": true,
+      "spriteName": "Pentagram",
+      "tag": "Pentagram"
+    }
+  ],
   "walls": [
     {
       "wallPosition": {
@@ -626,170 +790,6 @@
         "scaleZ": 1.0
       },
       "isColliding": true
-    }
-  ],
-  "player": {
-    "startPosition": {
-      "positionX": 20.0,
-      "positionY": 20.0,
-      "positionZ": 0.0
-    },
-    "image": {
-      "spriteName": "zombie",
-      "orderInLayer": 2
-    },
-    "shape": "circle",
-    "radius": 0.699999988079071
-  },
-  "interactions": [
-    {
-      "firstActor": "Player",
-      "secondActor": "Wall",
-      "message": [
-        "Do I look like a ghost ?",
-        "I cannot pass through the wall...",
-        "An invisible wall is still a wall",
-        "It would be easier if I was a ghost",
-        "Sometimes I wish I was a ghost"
-      ],
-      "sprites":[
-        ""
-      ]
-    },
-    {
-      "firstActor": "Player",
-      "secondActor": "Crow",
-      "message": [
-        "Crow: you lost your way",
-        "Crow: you should turn around",
-        "Crow: you ? Again...",
-        "Crow: you will be stuck here forever"
-      ],
-      "sprites":[
-        ""
-      ]
-    },
-    {
-      "firstActor": "Player",
-      "secondActor": "Pentagram",
-      "message": [
-        "Congratulation, you escaped successfully"
-      ],
-      "sprites":[
-        "Pentagram_Activated"
-      ]
-    }
-  ],
-  "items": [
-    {
-      "itemPosition": {
-        "positionX": 23.100000381469728,
-        "positionY": 12.0,
-        "positionZ": 0.0
-      },
-      "itemRotation": {
-        "rotationX": 0.0,
-        "rotationY": 0.0,
-        "rotationZ": 0.0,
-        "rotationW": 0.0
-      },
-      "itemScale": {
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
-      },
-      "isColliding": true,
-      "isDisplayed": true,
-      "spriteName": "Crow",
-      "tag": "Crow"
-    },
-    {
-      "itemPosition": {
-        "positionX": -1.5,
-        "positionY": -16.0,
-        "positionZ": 0.0
-      },
-      "itemRotation": {
-        "rotationX": 0.0,
-        "rotationY": 0.0,
-        "rotationZ": 0.0,
-        "rotationW": 0.0
-      },
-      "itemScale": {
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
-      },
-      "isColliding": true,
-      "isDisplayed": true,
-      "spriteName": "Crow",
-      "tag": "Crow"
-    },
-    {
-      "itemPosition": {
-        "positionX": -13.699999809265137,
-        "positionY": -0.6000000238418579,
-        "positionZ": 0.0
-      },
-      "itemRotation": {
-        "rotationX": 0.0,
-        "rotationY": 0.0,
-        "rotationZ": 0.0,
-        "rotationW": 0.0
-      },
-      "itemScale": {
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
-      },
-      "isColliding": true,
-      "isDisplayed": true,
-      "spriteName": "Crow",
-      "tag": "Crow"
-    },
-    {
-      "itemPosition": {
-        "positionX": 3.200000047683716,
-        "positionY": 16.700000762939454,
-        "positionZ": 0.0
-      },
-      "itemRotation": {
-        "rotationX": 0.0,
-        "rotationY": 0.0,
-        "rotationZ": 0.0,
-        "rotationW": 0.0
-      },
-      "itemScale": {
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
-      },
-      "isColliding": true,
-      "isDisplayed": true,
-      "spriteName": "Crow",
-      "tag": "Crow"
-    },
-    {
-      "itemPosition": {
-        "positionX": 11.02,
-        "positionY": 21.05,
-        "positionZ": 0.0
-      },
-      "itemRotation": {
-        "rotationX": 0.0,
-        "rotationY": 0.0,
-        "rotationZ": 0.0,
-        "rotationW": 0.0
-      },
-      "itemScale": {
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
-      },
-      "isColliding": false,
-      "isDisplayed": true,
-      "spriteName": "Pentagram",
-      "tag": "Pentagram"
     }
   ]
 }

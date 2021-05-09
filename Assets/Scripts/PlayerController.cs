@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private GameManager _gameManager;
     private float _horizontalInput;
     private float _verticalInput;
     private float _movementSpeed = 5f;
@@ -11,34 +13,47 @@ public class PlayerController : MonoBehaviour
 
     public GameObject PlayerCollideWith => _playerCollideWith;
 
+    private void Start()
+    {
+        GetRefs();
+    }
+
+    private void GetRefs()
+    {
+        _gameManager = FindObjectOfType<GameManager>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        _horizontalInput = Input.GetAxis("Horizontal");
-        _verticalInput = Input.GetAxis("Vertical");
-
-        if (_horizontalInput < -.5f && !CheckForCollision(Vector3.left))
+        if (_gameManager.GameIsOn)
         {
-            transform.position += Vector3.left * (_movementSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(0, 0, 180);
-        }
+            _horizontalInput = Input.GetAxis("Horizontal");
+            _verticalInput = Input.GetAxis("Vertical");
 
-        else if (_horizontalInput > .5f && !CheckForCollision(Vector3.right))
-        {
-            transform.position += Vector3.right * (_movementSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
+            if (_horizontalInput < -.5f && !CheckForCollision(Vector3.left))
+            {
+                transform.position += Vector3.left * (_movementSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
 
-        else if (_verticalInput < -.5f && !CheckForCollision(Vector3.down))
-        {
-            transform.position += Vector3.down * (_movementSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(0, 0, 270);
-        }
+            else if (_horizontalInput > .5f && !CheckForCollision(Vector3.right))
+            {
+                transform.position += Vector3.right * (_movementSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
 
-        else if (_verticalInput > .5f && !CheckForCollision(Vector3.up))
-        {
-            transform.position += Vector3.up * (_movementSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(0, 0, 90);
+            else if (_verticalInput < -.5f && !CheckForCollision(Vector3.down))
+            {
+                transform.position += Vector3.down * (_movementSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, 0, 270);
+            }
+
+            else if (_verticalInput > .5f && !CheckForCollision(Vector3.up))
+            {
+                transform.position += Vector3.up * (_movementSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, 0, 90);
+            }
         }
     }
 
@@ -49,7 +64,7 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null)
         {
             _playerCollideWith = hit.collider.gameObject;
-            Debug.Log("Hit " + _playerCollideWith);
+            // Debug.Log("Hit " + _playerCollideWith);
             return !(_playerCollideWith.Equals("Pentagram"));
         }
 

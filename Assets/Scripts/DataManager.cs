@@ -46,20 +46,34 @@ public class DataManager : MonoBehaviour
     public void Setup()
     {
         SetupWalls();
-        SetupPlayer();
-        SetupInteractions();
         SetupItems();
+        SetupPlayer();
+
     }
 
     private void SetupItems()
     {
         Item[] items = _setting.Items;
-    }
+        GameObject itemsParent = new GameObject("Items");
+        itemsParent.transform.parent = GameObject.Find(dynamicNameGO).transform;
 
-    private void SetupInteractions()
-    {
-        Interaction[] interactions = _setting.Interactions;
-        GameObject message = GameObject.Find("Message");
+        for (int i = 0; i < items.Length; i++)
+        {
+            Item currentItem = items[i];
+            GameObject go = new GameObject(currentItem.Tag);
+            go.transform.parent = itemsParent.transform;
+            go.tag = currentItem.Tag;
+            go.transform.position = currentItem.ItemPosition.GetVector3();
+            go.transform.rotation = currentItem.ItemRotation.GetQuaternion();
+            go.transform.localScale = currentItem.ItemScale.GetVector3();
+            go.AddComponent<SpriteRenderer>();
+            go.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(currentItem.SpriteName);
+            go.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            go.GetComponent<SpriteRenderer>().enabled = currentItem.IsDisplayed;
+            go.AddComponent<CircleCollider2D>();
+            go.GetComponent<CircleCollider2D>().isTrigger = !currentItem.IsColliding;
+        }
+        
     }
 
     private void SetupPlayer()
@@ -76,6 +90,7 @@ public class DataManager : MonoBehaviour
         if (player.Shape.Equals("circle"))
         {
             go.AddComponent<CircleCollider2D>();
+            go.GetComponent<CircleCollider2D>().radius = player.Radius;
         }
 
         go.AddComponent<PlayerController>();
@@ -95,6 +110,8 @@ public class DataManager : MonoBehaviour
             go.transform.position = walls[i].WallPosition.GetVector3();
             go.transform.rotation = walls[i].WallRotation.GetQuaternion();
             go.transform.localScale = walls[i].WallScale.GetVector3();
+            go.AddComponent<SpriteRenderer>();
+            go.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Wall");
             if (walls[i].IsColliding)
             {
                 go.AddComponent<BoxCollider2D>();

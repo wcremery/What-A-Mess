@@ -18,6 +18,7 @@ namespace Settings
             this.walls = new Wall[4];
             this.player = new Player();
             this.interactions = new Interaction[1];
+            this.items = new Item[1];
         }
 
         public Wall[] Walls => walls;

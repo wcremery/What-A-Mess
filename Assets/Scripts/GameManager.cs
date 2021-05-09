@@ -15,6 +15,14 @@ public class GameManager : MonoBehaviour
     private PlayerController _playerController;
     private TextMeshProUGUI _textMeshProUGUI;
     private bool _lookForCollision;
+    private bool _gameIsOn;
+    private bool _start;
+
+    public bool GameIsOn
+    {
+        get => _gameIsOn;
+        set => _gameIsOn = value;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +30,7 @@ public class GameManager : MonoBehaviour
         GetRefs();
         Setup();
         GetInteractions();
+        DisplayMaze(false);
     }
 
     private void GetInteractions()
@@ -45,6 +54,8 @@ public class GameManager : MonoBehaviour
         _settingData = _dataManager.Setting;
         _interactions = _settingData.Interactions;
         _lookForCollision = true;
+        _gameIsOn = false;
+        _start = true;
     }
 
     private void GetRefs()
@@ -52,21 +63,78 @@ public class GameManager : MonoBehaviour
         _dataManager = FindObjectOfType<DataManager>();
         _playerInteractions = new List<Interaction>();
         _playerController = FindObjectOfType<PlayerController>();
-        _textMeshProUGUI = FindObjectOfType<TextMeshProUGUI>();
+        _textMeshProUGUI = GameObject.Find("Message").GetComponent<TextMeshProUGUI>();
     }
 
     private void Update()
     {
-        if (_lookForCollision)
+        if (_gameIsOn)
         {
-            for (int i = 0; i < _playerInteractions.Count; i++)
+            if (_start)
             {
-                Interaction currentInteraction = _interactions[i];
+                StartCoroutine(DisplayMessage("Reach the pentagram to escape !"));
+                _start = false;
+            }
+            
+            if (_lookForCollision)
+            {
+                CheckCollision();
+            }
 
-                if (_playerController.PlayerCollideWith.Equals("Wall"))
+            DisplayMaze(Input.GetKey(KeyCode.C));
+        }
+    }
+
+    private void DisplayMaze(bool cheatOn)
+    {
+        GameObject background = GameObject.Find("Background");
+        SpriteRenderer backgroundSpriteRenderer = background.GetComponent<SpriteRenderer>();
+        
+        if (cheatOn)
+        {
+            backgroundSpriteRenderer.sortingOrder = 0;
+            return;
+        }
+        
+        backgroundSpriteRenderer.sortingOrder = 1;
+    }
+
+    private void CheckCollision()
+    {
+        for (int i = 0; i < _playerInteractions.Count; i++)
+        {
+            Interaction currentInteraction = _interactions[i];
+
+            if (_playerController.PlayerCollideWith != null)
+            {
+                string colliderTag = _playerController.PlayerCollideWith.tag;
+
+                if (currentInteraction.SecondActor.Equals("Wall"))
                 {
-                    int messageIndex = Random.Range(0, currentInteraction.Message.Length);
-                    StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                    if (colliderTag.Equals("Wall"))
+                    {
+                        int messageIndex = Random.Range(0, currentInteraction.Message.Length);
+                        StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                    }
+                }
+                else if (currentInteraction.SecondActor.Equals("Crow"))
+                {
+                    if (colliderTag.Equals("Crow"))
+                    {
+                        int messageIndex = Random.Range(0, currentInteraction.Message.Length);
+                        StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                    }
+                }
+                else if (currentInteraction.SecondActor.Equals("Pentagram"))
+                {
+                    if (colliderTag.Equals("Pentagram"))
+                    {
+                        int messageIndex = Random.Range(0, currentInteraction.Message.Length);
+                        StartCoroutine(DisplayMessage(currentInteraction.Message[messageIndex]));
+                        _playerController.PlayerCollideWith.GetComponent<SpriteRenderer>().sprite =
+                            Resources.Load<Sprite>(currentInteraction.Sprites[0]);
+                        _gameIsOn = false;
+                    }
                 }
             }
         }

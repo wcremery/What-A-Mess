@@ -7,9 +7,9 @@ public class PlayerController : MonoBehaviour
     private float _horizontalInput;
     private float _verticalInput;
     private float _movementSpeed = 5f;
-    private string _playerCollideWith = "";
+    private GameObject _playerCollideWith;
 
-    public string PlayerCollideWith => _playerCollideWith;
+    public GameObject PlayerCollideWith => _playerCollideWith;
 
     // Update is called once per frame
     void Update()
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        if (_verticalInput < -.5f && !CheckForCollision(Vector3.down))
+        else if (_verticalInput < -.5f && !CheckForCollision(Vector3.down))
         {
             transform.position += Vector3.down * (_movementSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(0, 0, 270);
@@ -48,12 +48,12 @@ public class PlayerController : MonoBehaviour
 
         if (hit.collider != null)
         {
-            _playerCollideWith = hit.collider.gameObject.tag;
+            _playerCollideWith = hit.collider.gameObject;
             Debug.Log("Hit " + _playerCollideWith);
-            return true;
+            return !(_playerCollideWith.Equals("Pentagram"));
         }
 
-        _playerCollideWith = "none";
+        _playerCollideWith = null;
         return false;
     }
 }

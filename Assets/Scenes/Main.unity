@@ -312,10 +312,10 @@ RectTransform:
   m_Father: {fileID: 1377442465}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &47945364
 MonoBehaviour:
@@ -364,10 +364,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -3053,7 +3053,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 300, y: 100}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &967063996
 MonoBehaviour:
@@ -3146,10 +3146,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 16
@@ -4186,10 +4186,10 @@ RectTransform:
   m_Father: {fileID: 779210382}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 1920, y: 100}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1377442466
 MonoBehaviour:
@@ -4375,7 +4375,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 300, y: 100}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1570000153
 MonoBehaviour:
@@ -4468,10 +4468,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 16
@@ -4763,7 +4763,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 600, y: 200}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1605934275
 MonoBehaviour:
@@ -4812,10 +4812,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 48
   m_fontSizeBase: 48
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 16
@@ -5717,6 +5717,128 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _setting:
+    player:
+      startPosition:
+        positionX: 20
+        positionY: 20
+        positionZ: 0
+      image:
+        spriteName: zombie
+        orderInLayer: 2
+      shape: circle
+      radius: 0.7
+    interactions:
+    - firstActor: Player
+      secondActor: Wall
+      message:
+      - Do I look like a ghost ?
+      - I cannot pass through the wall...
+      - An invisible wall is still a wall
+      - It would be easier if I was a ghost
+      - Sometimes I wish I was a ghost
+      sprites:
+      - 
+    - firstActor: Player
+      secondActor: Crow
+      message:
+      - 'Crow: you lost your way'
+      - 'Crow: you should turn around'
+      - 'Crow: you ? Again...'
+      - 'Crow: you will be stuck here forever'
+      sprites:
+      - 
+    - firstActor: Player
+      secondActor: Pentagram
+      message:
+      - Congratulation, you escaped successfully
+      sprites:
+      - Pentagram_Activated
+    items:
+    - itemPosition:
+        positionX: 23.1
+        positionY: 12
+        positionZ: 0
+      itemRotation:
+        rotationX: 0
+        rotationY: 0
+        rotationZ: 0
+        rotationW: 0
+      itemScale:
+        scaleX: 1
+        scaleY: 1
+        scaleZ: 1
+      isColliding: 1
+      isDisplayed: 1
+      spriteName: Crow
+      tag: Crow
+    - itemPosition:
+        positionX: -1.5
+        positionY: -16
+        positionZ: 0
+      itemRotation:
+        rotationX: 0
+        rotationY: 0
+        rotationZ: 0
+        rotationW: 0
+      itemScale:
+        scaleX: 1
+        scaleY: 1
+        scaleZ: 1
+      isColliding: 1
+      isDisplayed: 1
+      spriteName: Crow
+      tag: Crow
+    - itemPosition:
+        positionX: -13.7
+        positionY: -0.6
+        positionZ: 0
+      itemRotation:
+        rotationX: 0
+        rotationY: 0
+        rotationZ: 0
+        rotationW: 0
+      itemScale:
+        scaleX: 1
+        scaleY: 1
+        scaleZ: 1
+      isColliding: 1
+      isDisplayed: 1
+      spriteName: Crow
+      tag: Crow
+    - itemPosition:
+        positionX: 3.2
+        positionY: 16.7
+        positionZ: 0
+      itemRotation:
+        rotationX: 0
+        rotationY: 0
+        rotationZ: 0
+        rotationW: 0
+      itemScale:
+        scaleX: 1
+        scaleY: 1
+        scaleZ: 1
+      isColliding: 1
+      isDisplayed: 1
+      spriteName: Crow
+      tag: Crow
+    - itemPosition:
+        positionX: 11.02
+        positionY: 21.05
+        positionZ: 0
+      itemRotation:
+        rotationX: 0
+        rotationY: 0
+        rotationZ: 0
+        rotationW: 0
+      itemScale:
+        scaleX: 1
+        scaleY: 1
+        scaleZ: 1
+      isColliding: 0
+      isDisplayed: 1
+      spriteName: Pentagram
+      tag: Pentagram
     walls:
     - wallPosition:
         positionX: -25
@@ -6180,128 +6302,6 @@ MonoBehaviour:
         scaleY: 1
         scaleZ: 1
       isColliding: 1
-    player:
-      startPosition:
-        positionX: 20
-        positionY: 20
-        positionZ: 0
-      image:
-        spriteName: zombie
-        orderInLayer: 2
-      shape: circle
-      radius: 0.7
-    interactions:
-    - firstActor: Player
-      secondActor: Wall
-      message:
-      - Do I look like a ghost ?
-      - I cannot pass through the wall...
-      - An invisible wall is still a wall
-      - It would be easier if I was a ghost
-      - Sometimes I wish I was a ghost
-      sprites:
-      - 
-    - firstActor: Player
-      secondActor: Crow
-      message:
-      - 'Crow: you lost your way'
-      - 'Crow: you should turn around'
-      - 'Crow: you ? Again...'
-      - 'Crow: you will be stuck here forever'
-      sprites:
-      - 
-    - firstActor: Player
-      secondActor: Pentagram
-      message:
-      - Congratulation, you escaped successfully
-      sprites:
-      - Pentagram_Activated
-    items:
-    - itemPosition:
-        positionX: 23.1
-        positionY: 12
-        positionZ: 0
-      itemRotation:
-        rotationX: 0
-        rotationY: 0
-        rotationZ: 0
-        rotationW: 0
-      itemScale:
-        scaleX: 1
-        scaleY: 1
-        scaleZ: 1
-      isColliding: 1
-      isDisplayed: 1
-      spriteName: Crow
-      tag: Crow
-    - itemPosition:
-        positionX: -1.5
-        positionY: -16
-        positionZ: 0
-      itemRotation:
-        rotationX: 0
-        rotationY: 0
-        rotationZ: 0
-        rotationW: 0
-      itemScale:
-        scaleX: 1
-        scaleY: 1
-        scaleZ: 1
-      isColliding: 1
-      isDisplayed: 1
-      spriteName: Crow
-      tag: Crow
-    - itemPosition:
-        positionX: -13.7
-        positionY: -0.6
-        positionZ: 0
-      itemRotation:
-        rotationX: 0
-        rotationY: 0
-        rotationZ: 0
-        rotationW: 0
-      itemScale:
-        scaleX: 1
-        scaleY: 1
-        scaleZ: 1
-      isColliding: 1
-      isDisplayed: 1
-      spriteName: Crow
-      tag: Crow
-    - itemPosition:
-        positionX: 3.2
-        positionY: 16.7
-        positionZ: 0
-      itemRotation:
-        rotationX: 0
-        rotationY: 0
-        rotationZ: 0
-        rotationW: 0
-      itemScale:
-        scaleX: 1
-        scaleY: 1
-        scaleZ: 1
-      isColliding: 1
-      isDisplayed: 1
-      spriteName: Crow
-      tag: Crow
-    - itemPosition:
-        positionX: 11.02
-        positionY: 21.05
-        positionZ: 0
-      itemRotation:
-        rotationX: 0
-        rotationY: 0
-        rotationZ: 0
-        rotationW: 0
-      itemScale:
-        scaleX: 1
-        scaleY: 1
-        scaleZ: 1
-      isColliding: 0
-      isDisplayed: 1
-      spriteName: Pentagram
-      tag: Pentagram
 --- !u!1 &2069283321
 GameObject:
   m_ObjectHideFlags: 0
@@ -6336,6 +6336,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: 0}
-  m_SizeDelta: {x: 600, y: 300}
+  m_AnchoredPosition: {x: 150, y: 0}
+  m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
